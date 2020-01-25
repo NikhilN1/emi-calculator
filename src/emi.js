@@ -14,6 +14,13 @@ function Loan (amount, installmentsNumber, interestRate) {
      !interestRate) {
     throw new Error(`wrong parameters: ${amount} ${installmentsNumber} ${interestRate}`)
   }
+  
+  // function Loan
+  if (!amount || amount <= 0 ||
+    !installmentsNumber || installmentsNumber <= 0 ||
+    !interestRate || interestRate <= 0) {
+  throw new Error(`wrong parameters: ${amount} ${installmentsNumber} ${interestRate}`)
+  }
 
   const installments = []
   let interestSum = 0
@@ -133,6 +140,8 @@ function emiToHtmlTable (loan, params) {
 
   return html.join('')
 }
+
+
 
 function rnd (num) {
   return Math.round(num * 100) / 100
